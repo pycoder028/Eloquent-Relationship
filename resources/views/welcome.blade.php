@@ -32,7 +32,7 @@
                 @endforeach
             </tbody> --}}
 
-            <thead>
+{{--             <thead>
               <tr>
                 <th scope="col">Post</th>
                 <th scope="col">Comments</th>
@@ -45,6 +45,25 @@
                   <td>
                     @foreach ($post->comments as $comment)
                       {{ $comment->message }}
+                    @endforeach
+                  </td>
+                </tr>
+                @endforeach
+            </tbody> --}}
+
+            <thead>
+              <tr>
+                <th scope="col">Post Title</th>
+                <th scope="col">Category</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($posts as $data)
+                <tr>
+                  <td>{{ $data->title }}</td>
+                  <td>
+                    @foreach ($data->categories as $cat)
+                      {{ $cat->name }}
                     @endforeach
                   </td>
                 </tr>
