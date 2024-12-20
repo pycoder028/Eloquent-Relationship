@@ -15,7 +15,7 @@
 
     <div class="container">
         <table class="table table-striped">
-            <thead>
+{{--             <thead>
               <tr>
                 <th scope="col">SL No.</th>
                 <th scope="col">Username</th>
@@ -30,7 +30,28 @@
                     <td>{{ $user->phone->name }}</td>
                   </tr>
                 @endforeach
+            </tbody> --}}
+
+            <thead>
+              <tr>
+                <th scope="col">Post</th>
+                <th scope="col">Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($posts as $post)
+                <tr>
+                  <td>{{ $post->title }}</td>
+                  <td>
+                    @foreach ($post->comments as $comment)
+                      {{ $comment->message }}
+                    @endforeach
+                  </td>
+                </tr>
+                @endforeach
             </tbody>
+
+
           </table>
     </div>
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $users = User::all();
+    // $users = User::all();
+    $posts = Post::with('comments')->get();
 
-    return view('welcome',compact('users'));
+    return view('welcome',compact('posts'));
 });
