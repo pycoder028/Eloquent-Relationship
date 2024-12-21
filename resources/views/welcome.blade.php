@@ -15,57 +15,19 @@
 
     <div class="container">
         <table class="table table-striped">
-{{--             <thead>
-              <tr>
-                <th scope="col">SL No.</th>
-                <th scope="col">Username</th>
-                <th scope="col">Phone</th>
-              </tr>
-            </thead>
-            <tbody>
-                @foreach ($users as $key => $user)
-                <tr>
-                    <td>{{ $key+1 }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->phone->name }}</td>
-                  </tr>
-                @endforeach
-            </tbody> --}}
-
-{{--             <thead>
-              <tr>
-                <th scope="col">Post</th>
-                <th scope="col">Comments</th>
-              </tr>
-            </thead>
-            <tbody>
-                @foreach ($posts as $post)
-                <tr>
-                  <td>{{ $post->title }}</td>
-                  <td>
-                    @foreach ($post->comments as $comment)
-                      {{ $comment->message }}
-                    @endforeach
-                  </td>
-                </tr>
-                @endforeach
-            </tbody> --}}
-
             <thead>
               <tr>
-                <th scope="col">Post Title</th>
-                <th scope="col">Category</th>
+                <th scope="col">Mechanic</th>
+                <th scope="col">Car Model</th>
+                <th scope="col">Car Owner</th>
               </tr>
             </thead>
             <tbody>
-                @foreach ($posts as $data)
+                @foreach ($mechanics as $data)
                 <tr>
-                  <td>{{ $data->title }}</td>
-                  <td>
-                    @foreach ($data->categories as $cat)
-                      {{ $cat->name }}
-                    @endforeach
-                  </td>
+                  <td>{{ $data->name }}</td>
+                  <td>{{ $data->car->model }}</td>
+                  <td>{{ $data->carOwner->name }}</td>
                 </tr>
                 @endforeach
             </tbody>
